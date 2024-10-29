@@ -1,0 +1,10 @@
+Notes
+
+28th Oct
+always return from a map function, ReactNode cannot render empty array
+fill function of array can be used on an already created array
+click is the alternative for click in jsx/tsx
+
+29th Oct
+key for any lists rendered on the page
+classlist gives a list of all the classes on the element, we can add, remove, check contains many operations on this list.
