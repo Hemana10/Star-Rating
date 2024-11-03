@@ -8,3 +8,8 @@ click is the alternative for click in jsx/tsx
 29th Oct
 key for any lists rendered on the page
 classlist gives a list of all the classes on the element, we can add, remove, check contains many operations on this list.
+
+3rd Nov
+to add/remove image using css for hover & click states use background-image
+background-image takes a url function to which we can pass the url
+to render the image with the outer conatiner we can use background-size: cover, so it covers entire space

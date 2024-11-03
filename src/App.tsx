@@ -8,33 +8,37 @@ function App() {
     let starLinks = document.querySelectorAll('a');
     let i;
     for(i = 0; i <= index; i++) {
-      (starLinks[i] as HTMLElement).classList.add('bg-yellow-500');
+        (starLinks[i] as HTMLElement).classList.remove('empty-star');
+        (starLinks[i] as HTMLElement).classList.add('highlighted-star');
     }
     for(; i < starLinks.length; i++) {
-      (starLinks[i] as HTMLElement).classList.remove('bg-yellow-500');
+      (starLinks[i] as HTMLElement).classList.remove('highlighted-star');
+      (starLinks[i] as HTMLElement).classList.add('empty-star');
     }
   };
 
   const handleHover = (index: number) => {
     let starLinks = document.querySelectorAll('a');
     for(let i = 0; i <= index; i++) {
-      if(!(starLinks[i] as HTMLElement).classList.contains('bg-yellow-500'))
-        (starLinks[i] as HTMLElement).classList.add('bg-yellow-200');
+      if(!(starLinks[i] as HTMLElement).classList.contains('hover-star')) {
+        (starLinks[i] as HTMLElement).classList.remove('empty-star');
+        (starLinks[i] as HTMLElement).classList.add('hover-star');
+      }
     }
   };
 
   const handleLeave = () => {
     let starLinks = document.querySelectorAll('a');
     for(let i = 0; i < starLinks.length; i++) {
-      (starLinks[i] as HTMLElement).classList.remove('bg-yellow-200');
+      (starLinks[i] as HTMLElement).classList.remove('hover-star');
+      (starLinks[i] as HTMLElement).classList.add('empty-star');
     }
   };
 
   const renderEmptyStars = stars.map((star, index) => 
-    <a key={index} onClick={() => handleClick(index)} onMouseEnter={() => handleHover(index)}  onMouseLeave={() => handleLeave()}  className='hover:cursor-pointer'>
-      <img src="https://static.thenounproject.com/png/1299464-512.png" alt="empty star" className='h-24 w-24'/> 
+    <a key={index} onClick={() => handleClick(index)} className='hover:cursor-pointer empty-star'
+      onMouseEnter={() => handleHover(index)}  onMouseLeave={() => handleLeave()}>
     </a>
-
   );
 
   return (
@@ -42,11 +46,10 @@ function App() {
       <div className='h-screen flex justify-center items-center'>
         <div>
           <div className='flex justify-center items-center'>
-            <span>Please Leave a Rating!!</span>
+            <span className='font-mono text-3xl'>Please leave a rating!!!</span>
           </div>
-          <div className='flex' >
+          <div className='flex'>
             {renderEmptyStars}
-
           </div>
         </div>
       </div>

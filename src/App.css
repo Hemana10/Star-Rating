@@ -2,3 +2,23 @@
 @tailwind components;
 @tailwind utilities;
 
+.empty-star {
+    width: 6rem;
+    height: 6rem;
+    background-size: cover;
+    background-image: url('./assets/empty-star.png');
+}
+
+.hover-star {
+    width: 6rem;
+    height: 6rem;
+    background-size: cover;
+    background-image: url('./assets/hover-star.png');
+}
+
+.highlighted-star {
+    width: 6rem;
+    height: 6rem;
+    background-size: cover;
+    background-image: url('./assets/highlighted-star.png');
+}
